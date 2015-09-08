@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let imagePicker = UIImagePickerController()
     @IBOutlet var photoPreview: UIView!
     @IBOutlet weak var mainToolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIToolbar!
@@ -24,6 +26,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func cameraActivate(sender: UIButton) {
+        println("tapped camera button")
+        imagePicker.sourceType = .Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
 
 }
 
