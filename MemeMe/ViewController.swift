@@ -12,9 +12,10 @@ class ViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     @IBOutlet var photoPreview: UIView!
-    @IBOutlet weak var mainToolbar: UIToolbar!
-    @IBOutlet weak var cameraButton: UIToolbar!
-    @IBOutlet weak var albumButton: UIBarButtonItem!
+    @IBOutlet weak var pickFromAlbum: UIToolbar!
+    @IBOutlet weak var cameraButton: UITableViewCell!
+    @IBOutlet weak var albumButton: UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cameraActivate(sender: UIButton) {
-        println("tapped camera button")
         imagePicker.sourceType = .Camera
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    @IBAction func albumActivate(sender: UIButton) {
+        imagePicker.sourceType = .PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
     }
 
 }

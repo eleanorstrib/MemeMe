@@ -16,42 +16,62 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="523"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VY9-Qt-HC5">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RdD-hw-Xwb">
+                                <rect key="frame" x="0.0" y="523" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem id="kHl-jV-cIe"/>
-                                    <barButtonItem style="plain" id="27R-dH-K1S">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8fb-xk-maB">
-                                            <rect key="frame" x="38" y="7" width="51" height="30"/>
+                                    <barButtonItem id="kL3-qa-XvG"/>
+                                </items>
+                            </toolbar>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GNd-dR-Tb2">
+                                <rect key="frame" x="16" y="523" width="99" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GNd-dR-Tb2" id="fbz-X5-sgY">
+                                    <rect key="frame" x="0.0" y="0.0" width="99" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Uk-9N-2IT">
+                                            <rect key="frame" x="24" y="7" width="51" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="camera">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="cameraActivate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3Gq-0h-0Qo"/>
+                                                <action selector="cameraActivate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FEb-yB-llI"/>
                                             </connections>
                                         </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="ahI-m7-uoL">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XeW-Gu-4LI">
-                                            <rect key="frame" x="122" y="7" width="43" height="30"/>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dXy-dz-lkz">
+                                <rect key="frame" x="213" y="524" width="91" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dXy-dz-lkz" id="JHj-jz-0jD">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AAs-JX-SMx">
+                                            <rect key="frame" x="24" y="7" width="43" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="album">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="albumActivate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eZy-4h-PMh"/>
+                                            </connections>
                                         </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="albumButton" destination="ahI-m7-uoL" id="4bW-CO-jcS"/>
-                        <outlet property="cameraButton" destination="VY9-Qt-HC5" id="FIg-MR-nex"/>
-                        <outlet property="mainToolbar" destination="VY9-Qt-HC5" id="RVe-UJ-Yge"/>
+                        <outlet property="albumButton" destination="AAs-JX-SMx" id="AT6-zi-gkl"/>
+                        <outlet property="cameraButton" destination="GNd-dR-Tb2" id="ScJ-xN-dbJ"/>
                         <outlet property="photoPreview" destination="kh9-bI-dsS" id="wde-uF-hbF"/>
+                        <outlet property="pickFromAlbum" destination="RdD-hw-Xwb" id="TcA-pK-AEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
