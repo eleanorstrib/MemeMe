@@ -70,7 +70,7 @@
                     <connections>
                         <outlet property="albumButton" destination="AAs-JX-SMx" id="AT6-zi-gkl"/>
                         <outlet property="cameraButton" destination="GNd-dR-Tb2" id="ScJ-xN-dbJ"/>
-                        <outlet property="photoPreview" destination="kh9-bI-dsS" id="wde-uF-hbF"/>
+                        <outlet property="photoPreview" destination="Hi4-gn-NsA" id="BH1-5C-BEG"/>
                         <outlet property="pickFromAlbum" destination="RdD-hw-Xwb" id="TcA-pK-AEo"/>
                     </connections>
                 </viewController>
