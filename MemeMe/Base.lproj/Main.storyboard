@@ -70,8 +70,17 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <navigationBar contentMode="scaleToFill" id="tWY-lZ-N8B">
+                                <rect key="frame" x="0.0" y="17" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="JM7-49-PZT">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="E6o-PK-Bor"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="TOP" minimumFontSize="17" id="dwm-Pe-HFm">
-                                <rect key="frame" x="21" y="73" width="278" height="30"/>
+                                <rect key="frame" x="21" y="77" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Medium" family="Kohinoor Devanagari" pointSize="17"/>
