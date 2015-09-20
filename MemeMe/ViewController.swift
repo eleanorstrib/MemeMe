@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 eleanorstrib. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -14,12 +15,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var pickFromAlbum: UIToolbar!
-    @IBOutlet weak var cameraButton: UITableViewCell!
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
+    @IBOutlet weak var topText: UITextField!
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.grayColor()
+        // custom settings for text box
+        self.topText.backgroundColor = UIColor.clearColor()
+        self.topText.borderStyle = .None
+        self.topText.textColor = UIColor.whiteColor()
+        self.topText.tintColor = UIColor.whiteColor()
+        self.topText.textAlignment = .Center
         imagePicker.delegate = self
     }
 
@@ -51,4 +61,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 }
+
 
