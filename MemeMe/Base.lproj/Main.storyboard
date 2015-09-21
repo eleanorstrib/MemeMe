@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Hi4-gn-NsA">
-                                <rect key="frame" x="10" y="61" width="300" height="450"/>
+                                <rect key="frame" x="10" y="44" width="300" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7mE-3k-nx2">
@@ -24,7 +24,7 @@
                                 </state>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.59999999999999964" contentMode="scaleToFill" id="RdD-hw-Xwb">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="523.99999960660932" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem id="kL3-qa-XvG"/>
@@ -70,9 +70,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="TOP" minimumFontSize="17" id="dwm-Pe-HFm">
-                                <rect key="frame" x="21" y="77" width="278" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="BOTTOM" minimumFontSize="17" id="4Ln-nP-bFj">
+                                <rect key="frame" x="21" y="475" width="278" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="yes"/>
@@ -86,6 +86,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="TOP" minimumFontSize="17" id="dwm-Pe-HFm">
+                                <rect key="frame" x="21" y="61" width="278" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="yes"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -93,10 +100,11 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="albumButton" destination="x3S-5i-5Dw" id="JlG-hz-kfX"/>
+                        <outlet property="bottomText" destination="4Ln-nP-bFj" id="Tzt-bf-tIm"/>
                         <outlet property="cameraButton" destination="vUQ-02-aNo" id="OoI-4u-aNx"/>
                         <outlet property="photoPreview" destination="Hi4-gn-NsA" id="BH1-5C-BEG"/>
                         <outlet property="pickFromAlbum" destination="RdD-hw-Xwb" id="TcA-pK-AEo"/>
-                        <outlet property="topText" destination="dwm-Pe-HFm" id="qj5-Ll-pvS"/>
+                        <outlet property="topText" destination="dwm-Pe-HFm" id="bdV-Tg-uJ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

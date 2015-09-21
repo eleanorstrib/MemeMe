@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
 
@@ -18,23 +18,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var topText: UITextField!
-
-
+    @IBOutlet weak var bottomText: UITextField!
+    
+    //text field delegate
+    let textFieldDel = TextFieldDelegate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.grayColor()
         
+        self.topText.delegate = textFieldDel
+        
+        // check if there is a camera present on the device
+        // if not, disable the camera button
         if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
             self.cameraButton.enabled = false
         }
-        // custom settings for text box
-        self.topText.backgroundColor = UIColor.clearColor()
-        self.topText.borderStyle = .None
-        self.topText.textColor = UIColor.whiteColor()
-        self.topText.tintColor = UIColor.whiteColor()
-        self.topText.textAlignment = .Center
-        self.topText.font = UIFont(name: "Impact", size: 25)
+        
+
+//        self.bottomText.delegate = textFieldDel
+        // custom settings for text boxes
+//        self.topText.backgroundColor = UIColor.clearColor()
+//        self.topText.borderStyle = .None
+//        self.topText.textColor = UIColor.whiteColor()
+//        self.topText.tintColor = UIColor.whiteColor()
+//        self.topText.textAlignment = .Center
+//        self.topText.font = UIFont(name: "Impact", size: 25)
         
         imagePicker.delegate = self
     }
