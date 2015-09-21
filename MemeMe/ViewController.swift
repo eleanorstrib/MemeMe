@@ -37,8 +37,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // camera button code
     @IBAction func cameraActivate(sender: UIButton) {
-        imagePicker.sourceType = .Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        // check if a camera is available on the device, disable button if not
+        if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            imagePicker.sourceType = .Camera
+            presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            self.cameraButton.enabled = false
+        }
     }
     
     // select an image code
