@@ -24,13 +24,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.grayColor()
+        
+        if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
+            self.cameraButton.enabled = false
+        }
         // custom settings for text box
         self.topText.backgroundColor = UIColor.clearColor()
         self.topText.borderStyle = .None
         self.topText.textColor = UIColor.whiteColor()
         self.topText.tintColor = UIColor.whiteColor()
         self.topText.textAlignment = .Center
-        self.topText.font = UIFont(name: "Impact", size: 15)
+        self.topText.font = UIFont(name: "Impact", size: 25)
         
         imagePicker.delegate = self
     }
@@ -38,12 +42,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // camera button code
     @IBAction func cameraActivate(sender: UIButton) {
         // check if a camera is available on the device, disable button if not
-        if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             imagePicker.sourceType = .Camera
             presentViewController(imagePicker, animated: true, completion: nil)
-        } else {
-            self.cameraButton.enabled = false
-        }
     }
     
     // select an image code
