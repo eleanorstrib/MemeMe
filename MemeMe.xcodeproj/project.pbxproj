@@ -13,6 +13,7 @@
 		FD8BBF161B9F7AE5004A6F88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8BBF151B9F7AE5004A6F88 /* Images.xcassets */; };
 		FD8BBF191B9F7AE5004A6F88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD8BBF171B9F7AE5004A6F88 /* LaunchScreen.xib */; };
 		FD8BBF251B9F7AE5004A6F88 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8BBF241B9F7AE5004A6F88 /* MemeMeTests.swift */; };
+		FDF40E841BB0649000B04453 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDF40E831BB0649000B04453 /* Impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		FD8BBF1E1B9F7AE5004A6F88 /* MemeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8BBF231B9F7AE5004A6F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8BBF241B9F7AE5004A6F88 /* MemeMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTests.swift; sourceTree = "<group>"; };
+		FDF40E831BB0649000B04453 /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		FD8BBF0C1B9F7AE5004A6F88 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDF40E831BB0649000B04453 /* Impact.ttf */,
 				FD8BBF0D1B9F7AE5004A6F88 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF40E841BB0649000B04453 /* Impact.ttf in Resources */,
 				FD8BBF141B9F7AE5004A6F88 /* Main.storyboard in Resources */,
 				FD8BBF191B9F7AE5004A6F88 /* LaunchScreen.xib in Resources */,
 				FD8BBF161B9F7AE5004A6F88 /* Images.xcassets in Resources */,
@@ -409,6 +413,7 @@
 				FD8BBF2A1B9F7AE5004A6F88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD8BBF2B1B9F7AE5004A6F88 /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				FD8BBF2D1B9F7AE5004A6F88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

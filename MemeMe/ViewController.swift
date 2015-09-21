@@ -30,6 +30,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.topText.textColor = UIColor.whiteColor()
         self.topText.tintColor = UIColor.whiteColor()
         self.topText.textAlignment = .Center
+        self.topText.font = UIFont(name: "Impact", size: 15)
+        
         imagePicker.delegate = self
     }
 
