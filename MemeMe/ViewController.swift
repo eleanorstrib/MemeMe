@@ -19,24 +19,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
-    
-    //text field delegate
-    let textFieldDel = TextFieldDelegate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.grayColor()
         
-        self.topText.delegate = textFieldDel
+        // assign delegates
+        self.topText.delegate = self;
+        self.bottomText.delegate = self;
+        imagePicker.delegate = self;
         
         // check if there is a camera present on the device
         // if not, disable the camera button
         if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
             self.cameraButton.enabled = false
         }
-        
 
-//        self.bottomText.delegate = textFieldDel
+        //set default text in text boxes
+        self.topText.text = "TOP"
+        self.bottomText.text = "BOTTOM"
+        
+//        let textFieldStyling = [
+//            NSBackgroundColorAttributeName: UIColor.clearColor(),
+//            NSFontAttributeName: UIFont(name: "Impact", size: 25)!,
+////            NSForegroundColorAttributeName: UIColor.whiteColor(),
+//            NSStrokeColorAttributeName: UIColor.blackColor()
+//        ]
+        
+        // link the attributes dictionary to the text fields
+//        topText.defaultTextAttributes = textFieldStyling
+//        bottomText.defaultTextAttributes = textFieldStyling
+        
+        
         // custom settings for text boxes
 //        self.topText.backgroundColor = UIColor.clearColor()
 //        self.topText.borderStyle = .None
@@ -45,9 +59,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //        self.topText.textAlignment = .Center
 //        self.topText.font = UIFont(name: "Impact", size: 25)
         
-        imagePicker.delegate = self
-    }
+        func applyTextStyle(text: UITextField!){
+            text.backgroundColor = UIColor.clearColor()
+            text.borderStyle = .None
+            text.textColor = UIColor.whiteColor()
+            text.tintColor = UIColor.whiteColor()
+            text.textAlignment = .Center
+            text.font = UIFont(name: "Impact", size: 25)
+        }
 
+        applyTextStyle(topText)
+        applyTextStyle(bottomText)
+        
+        
+        
+    }
+    
+    // return key dismisses keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        // Figure out what the new text will be, if we return true
+        var newText: NSString = textField.text
+        newText = newText.stringByReplacingCharactersInRange(range, withString: string)
+        
+        // returning true gives the text field permission to change its text
+        return true;
+    }
+    
     // camera button code
     @IBAction func cameraActivate(sender: UIButton) {
         // check if a camera is available on the device, disable button if not
