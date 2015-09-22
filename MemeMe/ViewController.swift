@@ -15,8 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var pickFromAlbum: UIToolbar!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var albumButton: UIButton!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
 
@@ -38,6 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //set default text in text boxes
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
+
         
         //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             text.tintColor = UIColor.whiteColor()
             text.textAlignment = .Center
             text.font = UIFont(name: "Impact", size: 25)
+            
         }
 
         applyTextStyle(topText)
@@ -61,14 +63,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // camera button code
-    @IBAction func cameraActivate(sender: UIButton) {
+    @IBAction func cameraActivate(sender: UIBarButtonItem) {
         // check if a camera is available on the device, disable button if not
             imagePicker.sourceType = .Camera
             presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     // select an image from album
-    @IBAction func albumActivate(sender: UIButton) {
+    @IBAction func albumActivate(sender: UIBarButtonItem) {
         // opens album on phone
         imagePicker.sourceType = .PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
