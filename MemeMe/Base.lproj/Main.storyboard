@@ -25,12 +25,20 @@
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" id="RdD-hw-Xwb">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="n9u-Ns-ffe"/>
-                                    <barButtonItem title="camera" id="i16-Uc-oXJ"/>
+                                    <barButtonItem title="camera" id="i16-Uc-oXJ">
+                                        <connections>
+                                            <action selector="cameraActivate:" destination="vXZ-lx-hvc" id="8ll-9Q-LS4"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="i5w-Iw-ppO"/>
-                                    <barButtonItem title="album" id="hKY-fS-eDJ"/>
+                                    <barButtonItem title="album" id="hKY-fS-eDJ">
+                                        <connections>
+                                            <action selector="albumActivate:" destination="vXZ-lx-hvc" id="vC6-Ap-oG2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="zwP-Mt-I9M"/>
                                 </items>
                             </toolbar>
