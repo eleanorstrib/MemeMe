@@ -39,26 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
         
-//        let textFieldStyling = [
-//            NSBackgroundColorAttributeName: UIColor.clearColor(),
-//            NSFontAttributeName: UIFont(name: "Impact", size: 25)!,
-////            NSForegroundColorAttributeName: UIColor.whiteColor(),
-//            NSStrokeColorAttributeName: UIColor.blackColor()
-//        ]
-        
-        // link the attributes dictionary to the text fields
-//        topText.defaultTextAttributes = textFieldStyling
-//        bottomText.defaultTextAttributes = textFieldStyling
-        
-        
-        // custom settings for text boxes
-//        self.topText.backgroundColor = UIColor.clearColor()
-//        self.topText.borderStyle = .None
-//        self.topText.textColor = UIColor.whiteColor()
-//        self.topText.tintColor = UIColor.whiteColor()
-//        self.topText.textAlignment = .Center
-//        self.topText.font = UIFont(name: "Impact", size: 25)
-        
+        //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
             text.backgroundColor = UIColor.clearColor()
             text.borderStyle = .None
@@ -70,25 +51,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         applyTextStyle(topText)
         applyTextStyle(bottomText)
-        
-        
-        
+
     }
     
     // return key dismisses keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
-        // Figure out what the new text will be, if we return true
-        var newText: NSString = textField.text
-        newText = newText.stringByReplacingCharactersInRange(range, withString: string)
-        
-        // returning true gives the text field permission to change its text
-        return true;
     }
     
     // camera button code
@@ -98,7 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    // select an image code
+    // select an image from album
     @IBAction func albumActivate(sender: UIButton) {
         // opens album on phone
         imagePicker.sourceType = .PhotoLibrary
