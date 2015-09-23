@@ -65,8 +65,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
-    
-    
     // return key dismisses keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -155,6 +153,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
+        self.photoPreview.image = nil
     }
     
 }
