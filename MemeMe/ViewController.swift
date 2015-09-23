@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +39,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //set default text in text boxes
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
-
+        
+        let textStyle = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSStrokeColorAttributeName: UIColor.blackColor(),
+//            NSStrokeWidthAttributeName: 0.9,
+        ]
+        
+        self.topText.defaultTextAttributes = textStyle
+        self.bottomText.defaultTextAttributes = textStyle
         
         //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
+            
             text.backgroundColor = UIColor.clearColor()
             text.borderStyle = .None
-            text.textColor = UIColor.whiteColor()
             text.tintColor = UIColor.whiteColor()
             text.textAlignment = .Center
             text.font = UIFont(name: "Impact", size: 25)
-            
+        
         }
 
-        applyTextStyle(topText)
-        applyTextStyle(bottomText)
+        applyTextStyle(self.topText)
+        applyTextStyle(self.bottomText)
 
     }
     
@@ -95,6 +104,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // dismiss the image picker if the user presses cancel
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //revert to default text if user presses cancel
+    //TODO: remove image selected
+    @IBAction func cancelByUser(sender: UIBarButtonItem) {
+        self.topText.text = "TOP"
+        self.bottomText.text = "BOTTOM"
     }
     
 }
