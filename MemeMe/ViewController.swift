@@ -155,7 +155,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.bottomText.text = "BOTTOM"
         self.photoPreview.image = nil
     }
-
+    
+    // share the meme
+    // TODO: share actual meme, remove placeholder
+    @IBAction func shareIt(sender: UIBarButtonItem) {
+        let sharePlaceholder = "share it!"
+        let activityController = UIActivityViewController(activityItems: [sharePlaceholder], applicationActivities: nil)
+        self.presentViewController(activityController, animated: true, completion: nil)
+    }
 
     
 }
