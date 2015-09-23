@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,13 +149,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    //revert to default text if user presses cancel
-    
+    //revert to default text and remove image if user presses cancel
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
         self.photoPreview.image = nil
     }
+
+
     
 }
 
