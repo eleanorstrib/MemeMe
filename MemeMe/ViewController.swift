@@ -62,6 +62,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return false
     }
     
+    // replace only the default text with user entered text
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM"{
+            textField.text = ""
+        }
+    }
+    
     // camera button code
     @IBAction func cameraActivate(sender: UIBarButtonItem) {
         // check if a camera is available on the device, disable button if not
