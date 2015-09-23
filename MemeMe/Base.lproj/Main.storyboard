@@ -23,26 +23,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <navigationBar contentMode="scaleToFill" id="tWY-lZ-N8B">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="JM7-49-PZT">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="EGp-Lw-Ps5">
-                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="shareIt:" destination="vXZ-lx-hvc" id="0wG-ua-iMI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="fVb-a5-I4n">
-                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="cancelByUser:" destination="vXZ-lx-hvc" id="VoG-s6-8Qy"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="dwm-Pe-HFm">
                                 <rect key="frame" x="21" y="61" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -75,6 +55,26 @@
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="zwP-Mt-I9M"/>
                                 </items>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" id="tWY-lZ-N8B">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="JM7-49-PZT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="EGp-Lw-Ps5">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="shareIt:" destination="vXZ-lx-hvc" id="0wG-ua-iMI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="fVb-a5-I4n">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="cancelByUser:" destination="vXZ-lx-hvc" id="VoG-s6-8Qy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -83,11 +83,13 @@
                     <connections>
                         <outlet property="albumButton" destination="hKY-fS-eDJ" id="I7X-df-vCc"/>
                         <outlet property="bottomText" destination="4Ln-nP-bFj" id="Tzt-bf-tIm"/>
-                        <outlet property="cameraButton" destination="i16-Uc-oXJ" id="y8g-Bw-rN6"/>
+                        <outlet property="cameraButton" destination="i16-Uc-oXJ" id="laN-7J-qVN"/>
                         <outlet property="cancelButton" destination="fVb-a5-I4n" id="CTA-Tt-WPO"/>
+                        <outlet property="navBar" destination="tWY-lZ-N8B" id="aK6-Db-a46"/>
                         <outlet property="photoPreview" destination="Hi4-gn-NsA" id="BH1-5C-BEG"/>
                         <outlet property="pickFromAlbum" destination="RdD-hw-Xwb" id="TcA-pK-AEo"/>
                         <outlet property="shareButton" destination="EGp-Lw-Ps5" id="DsE-TX-irq"/>
+                        <outlet property="toolBar" destination="RdD-hw-Xwb" id="lX2-6B-1CY"/>
                         <outlet property="topText" destination="dwm-Pe-HFm" id="bdV-Tg-uJ0"/>
                     </connections>
                 </viewController>

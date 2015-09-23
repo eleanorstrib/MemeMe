@@ -12,8 +12,10 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
-    var savedMemes = []
+    var savedMemes = NSMutableArray()
 
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var pickFromAlbum: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -43,7 +45,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         //set default text in text boxes
         self.topText.text = "TOP"
-        println(self.topText.text.dynamicType)
         self.bottomText.text = "BOTTOM"
         
         
@@ -167,21 +168,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // create a new image with the user input
     // called when user shares the meme
     func createMemeImage() -> UIImage {
+        
+        // hide everything but meme itself before saving
+        navBar.hidden = true
+        toolBar.hidden = true
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
+        
+        // show the navigation/toolbars when you go back to the app
+        navBar.hidden = false
+        toolBar.hidden = false
+        
         return memedImage
     }
     
     // save the meme as an object when the user shares it
-    func saveMeme(image: UIImage, path: String -> Bool) {
+    func saveMeme(image: UIImage) {
         var meme = (
-            topText: topText.text!,
-            bottomText: bottomText.text!,
-            image: photoPreview.image!,
+            topText: topText.text,
+            bottomText: bottomText.text,
+            image: photoPreview.image,
             memedImage: createMemeImage()
         )
+
     }
 }
 
