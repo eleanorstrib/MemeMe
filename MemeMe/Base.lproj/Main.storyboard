@@ -28,12 +28,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="JM7-49-PZT">
-                                        <barButtonItem key="leftBarButtonItem" title="share" id="EGp-Lw-Ps5">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="EGp-Lw-Ps5">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <action selector="shareIt:" destination="vXZ-lx-hvc" id="0wG-ua-iMI"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="fVb-a5-I4n">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <action selector="cancelByUser:" destination="vXZ-lx-hvc" id="VoG-s6-8Qy"/>
                                             </connections>
@@ -60,7 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="n9u-Ns-ffe"/>
-                                    <barButtonItem title="camera" id="i16-Uc-oXJ">
+                                    <barButtonItem systemItem="camera" id="i16-Uc-oXJ">
                                         <connections>
                                             <action selector="cameraActivate:" destination="vXZ-lx-hvc" id="8ll-9Q-LS4"/>
                                         </connections>
