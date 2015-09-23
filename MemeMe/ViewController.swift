@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
+    var savedMemes = []
 
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var pickFromAlbum: UIToolbar!
@@ -36,6 +37,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
             self.cameraButton.enabled = false
         }
+        
+        // disable the share button until image selected
+        shareButton.enabled = false
 
         //set default text in text boxes
         self.topText.text = "TOP"
@@ -119,6 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // check if a camera is available on the device, disable button if not
             imagePicker.sourceType = .Camera
             presentViewController(imagePicker, animated: true, completion: nil)
+            shareButton.enabled = true
     }
     
     // select an image from album
@@ -133,6 +138,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             // remove auto fit for selected image in the view to keep aspect ratio and remove image from the dictionary
             self.photoPreview.contentMode = .ScaleAspectFit
             self.photoPreview.image = selectedImage
+            shareButton.enabled = true
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -147,18 +153,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.topText.text = "TOP"
         self.bottomText.text = "BOTTOM"
         self.photoPreview.image = nil
+        shareButton.enabled = false
     }
-    
-    //save the meme
-//    func saveMeme() {
-//        let meme = Meme(
-//            textTop: textTop.text!,
-//            textBottom: textBottom.text!,
-//            originalImage: imageView.image,
-//            memedImage: memedImage
-//            
-//        )
-//    }
     
     // share the meme
     // calls createMemeImage to generate the graphic with text
@@ -178,6 +174,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    // save the meme as an object when the user shares it
+    func saveMeme(image: UIImage, path: String -> Bool) {
+        var meme = (
+            topText: topText.text!,
+            bottomText: bottomText.text!,
+            image: photoPreview.image!,
+            memedImage: createMemeImage()
+        )
+    }
 }
 
 
