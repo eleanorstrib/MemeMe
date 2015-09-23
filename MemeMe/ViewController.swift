@@ -39,16 +39,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         //set default text in text boxes
         self.topText.text = "TOP"
+        println(self.topText.text.dynamicType)
         self.bottomText.text = "BOTTOM"
         
-        let textStyle = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSStrokeColorAttributeName: UIColor.blackColor(),
-//            NSStrokeWidthAttributeName: 0.9,
-        ]
-        
-        self.topText.defaultTextAttributes = textStyle
-        self.bottomText.defaultTextAttributes = textStyle
         
         //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
@@ -57,8 +50,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             text.borderStyle = .None
             text.tintColor = UIColor.whiteColor()
             text.textAlignment = .Center
-            text.font = UIFont(name: "Impact", size: 25)
-        
+            text.font = UIFont(name: "Impact", size: 30)
+            text.textColor = UIColor.whiteColor()
         }
 
         applyTextStyle(self.topText)
@@ -156,14 +149,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.photoPreview.image = nil
     }
     
+    //save the meme
+//    func saveMeme() {
+//        let meme = Meme(
+//            textTop: textTop.text!,
+//            textBottom: textBottom.text!,
+//            originalImage: imageView.image,
+//            memedImage: memedImage
+//            
+//        )
+//    }
+    
     // share the meme
-    // TODO: share actual meme, remove placeholder
+    // calls createMemeImage to generate the graphic with text
     @IBAction func shareIt(sender: UIBarButtonItem) {
-        let sharePlaceholder = "share it!"
-        let activityController = UIActivityViewController(activityItems: [sharePlaceholder], applicationActivities: nil)
+        let shareMeme = createMemeImage()
+        let activityController = UIActivityViewController(activityItems: [shareMeme], applicationActivities: nil)
         self.presentViewController(activityController, animated: true, completion: nil)
     }
-
+    
+    // create a new image with the user input
+    // called when user shares the meme
+    func createMemeImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        return memedImage
+    }
     
 }
 
