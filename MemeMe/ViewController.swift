@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
-    var savedMemes = NSMutableArray()
-
+    var savedMemes = [Meme]()
+    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var photoPreview: UIImageView!
@@ -25,9 +26,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.grayColor()
+        println(savedMemes.dynamicType)
         
         // assign delegates
         self.topText.delegate = self;
@@ -163,6 +166,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let shareMeme = createMemeImage()
         let activityController = UIActivityViewController(activityItems: [shareMeme], applicationActivities: nil)
         self.presentViewController(activityController, animated: true, completion: nil)
+        saveMeme()
     }
     
     // create a new image with the user input
@@ -178,6 +182,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         
+        
         // show the navigation/toolbars when you go back to the app
         navBar.hidden = false
         toolBar.hidden = false
@@ -185,15 +190,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
-    // save the meme as an object when the user shares it
-    func saveMeme(image: UIImage) {
-        var meme = (
+    // creating the struct to store common meme properties
+    // these will be appended to the savedMemesArray
+    struct Meme {
+        var topText: String
+        var bottomText: String
+        var image: UIImage
+        var memedImage: UIImage
+    }
+    
+    // save the meme an instanciacion of the Meme object when the user shares it
+    // append the struct to savedMemes array and save to device
+    func saveMeme() {
+        var meme = Meme(
             topText: topText.text,
             bottomText: bottomText.text,
-            image: photoPreview.image,
+            image: photoPreview.image!,
             memedImage: createMemeImage()
         )
-
+        savedMemes.append(meme)
+        println("saving")
+        println(meme)
+        println(savedMemes)
     }
 }
 
