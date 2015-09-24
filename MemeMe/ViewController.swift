@@ -13,6 +13,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
+    // sets up Swift array to save meme objects to
     var savedMemes = [Meme]()
     
     @IBOutlet weak var navBar: UINavigationBar!
@@ -30,7 +31,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.grayColor()
-        println(savedMemes.dynamicType)
         
         // assign delegates
         self.topText.delegate = self;
@@ -53,7 +53,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
-            
             text.backgroundColor = UIColor.clearColor()
             text.borderStyle = .None
             text.tintColor = UIColor.whiteColor()
@@ -67,6 +66,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    /////////KEYBOARD MOVEMENT/////////
     // return key dismisses keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -122,6 +122,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.CGRectValue().height
     }
     
+    /////////IMAGE SELECTION/////////
+    
     // camera button code
     @IBAction func cameraActivate(sender: UIBarButtonItem) {
         // check if a camera is available on the device, disable button if not
@@ -152,6 +154,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    /////////CANCEL/////////
+    
     //revert to default text and remove image if user presses cancel
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
         self.topText.text = "TOP"
@@ -160,29 +164,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.enabled = false
     }
     
+    /////////SHARE & SAVE/////////
+    
     // share the meme
     // calls createMemeImage to generate the graphic with text
     @IBAction func shareIt(sender: UIBarButtonItem) {
         let shareMeme = createMemeImage()
         let activityController = UIActivityViewController(activityItems: [shareMeme], applicationActivities: nil)
+        activityController.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            println("hi")
+            self.saveMeme()
+        }
         self.presentViewController(activityController, animated: true, completion: nil)
-        saveMeme()
+        
     }
     
     // create a new image with the user input
     // called when user shares the meme
     func createMemeImage() -> UIImage {
-        
         // hide everything but meme itself before saving
         navBar.hidden = true
         toolBar.hidden = true
-        
+        // get image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-        
-        
         // show the navigation/toolbars when you go back to the app
         navBar.hidden = false
         toolBar.hidden = false
@@ -209,10 +217,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memedImage: createMemeImage()
         )
         savedMemes.append(meme)
-        println("saving")
-        println(meme)
-        println(savedMemes)
     }
+    
+
 }
 
 
