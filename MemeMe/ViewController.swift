@@ -142,7 +142,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage! {
             // remove auto fit for selected image in the view to keep aspect ratio and remove image from the dictionary
-            self.photoPreview.contentMode = .ScaleAspectFit
+            self.photoPreview.contentMode = .ScaleAspectFill
             self.photoPreview.image = selectedImage
             shareButton.enabled = true
         }
@@ -154,7 +154,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    /////////CANCEL/////////
+    /////////CANCEL BUTTON/////////
     
     //revert to default text and remove image if user presses cancel
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
