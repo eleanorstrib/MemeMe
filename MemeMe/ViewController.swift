@@ -53,15 +53,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //helper function to apply style to both fields
         func applyTextStyle(text: UITextField!){
+            // style the field
             text.backgroundColor = UIColor.clearColor()
             text.borderStyle = .None
             text.tintColor = UIColor.whiteColor()
-            text.textAlignment = .Center
-            text.font = UIFont(name: "Impact", size: 30)
-            text.textColor = UIColor.whiteColor()
+            // style the characters
+            let charAttributes = [
+                NSStrokeWidthAttributeName: -3.0,
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSStrokeColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: UIFont(name: "Impact", size: 30)!,
+            ]
+            topText.defaultTextAttributes = charAttributes
+            topText.textAlignment = .Center
+            bottomText.defaultTextAttributes = charAttributes
+            bottomText.textAlignment = .Center
         }
-
-        applyTextStyle(topText)
+        applyTextStyle(topText)        
         applyTextStyle(bottomText)
 
     }
