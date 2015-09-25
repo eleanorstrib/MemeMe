@@ -30,25 +30,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.grayColor()
+        view.backgroundColor = UIColor.grayColor()
         
         // assign delegates
-        self.topText.delegate = self;
-        self.bottomText.delegate = self;
+        topText.delegate = self;
+        bottomText.delegate = self;
         imagePicker.delegate = self;
         
         // check if there is a camera present on the device
         // if not, disable the camera button
         if  UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false {
-            self.cameraButton.enabled = false
+            cameraButton.enabled = false
         }
         
         // disable the share button until image selected
         shareButton.enabled = false
 
         //set default text in text boxes
-        self.topText.text = "TOP"
-        self.bottomText.text = "BOTTOM"
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
         
         
         //helper function to apply style to both fields
@@ -61,15 +61,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             text.textColor = UIColor.whiteColor()
         }
 
-        applyTextStyle(self.topText)
-        applyTextStyle(self.bottomText)
+        applyTextStyle(topText)
+        applyTextStyle(bottomText)
 
     }
     
     /////////KEYBOARD MOVEMENT/////////
     // return key dismisses keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         return false
     }
     
@@ -105,14 +105,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // control sliding up and down of view with the keyboard
     // slide only when bottomText is the active field
     func keyboardWillShow(notification: NSNotification) {
-        if self.bottomText.isFirstResponder() {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomText.isFirstResponder() {
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if self.bottomText.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+        if bottomText.isFirstResponder() {
+            view.frame.origin.y += getKeyboardHeight(notification)
         }
     }
     
@@ -142,8 +142,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage! {
             // remove auto fit for selected image in the view to keep aspect ratio and remove image from the dictionary
-            self.photoPreview.contentMode = .ScaleAspectFill
-            self.photoPreview.image = selectedImage
+            photoPreview.contentMode = .ScaleAspectFill
+            photoPreview.image = selectedImage
             shareButton.enabled = true
         }
         dismissViewControllerAnimated(true, completion: nil)
@@ -158,9 +158,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //revert to default text and remove image if user presses cancel
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
-        self.topText.text = "TOP"
-        self.bottomText.text = "BOTTOM"
-        self.photoPreview.image = nil
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+        photoPreview.image = nil
         shareButton.enabled = false
     }
     
@@ -173,7 +173,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let activityController = UIActivityViewController(activityItems: [shareMeme], applicationActivities: nil)
         activityController.completionWithItemsHandler = {
             (activity, success, items, error) in
-            println("hi")
             self.saveMeme()
         }
         self.presentViewController(activityController, animated: true, completion: nil)
@@ -187,8 +186,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navBar.hidden = true
         toolBar.hidden = true
         // get image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         // show the navigation/toolbars when you go back to the app
