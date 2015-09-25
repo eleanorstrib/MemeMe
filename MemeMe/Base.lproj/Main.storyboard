@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="yes"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" id="RdD-hw-Xwb">
-                                <rect key="frame" x="0.0" y="524.0000006170834" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="n9u-Ns-ffe"/>

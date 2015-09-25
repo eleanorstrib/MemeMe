@@ -91,12 +91,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // subscribe to keyboard notifications
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     
     func subscribeToKeyboardNotifications() {
@@ -184,7 +184,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             (activity, success, items, error) in
             self.saveMeme()
         }
-        self.presentViewController(activityController, animated: true, completion: nil)
+        presentViewController(activityController, animated: true, completion: nil)
         
     }
     
