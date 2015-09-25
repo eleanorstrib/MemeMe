@@ -118,9 +118,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // check if the bottomText field is active, only slide if true
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     
