@@ -9,15 +9,22 @@
 import Foundation
 import UIKit
 
-class SentMemesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func viewdidLoad() {
+        super.viewDidLoad()
+        //TODO: fix, not working
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     let sentMemes = savedMemes
     
-    func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         println(self.sentMemes.count)
         return self.sentMemes.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //create the reusable cell and define data source
         let cell = tableView.dequeueReusableCellWithIdentifier("SentMemeCell") as! UITableViewCell
         let meme = self.sentMemes[indexPath.row]

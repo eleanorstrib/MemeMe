@@ -26,7 +26,8 @@
         <!--Sent Memes-->
         <scene sceneID="7OR-wh-hc9">
             <objects>
-                <tableViewController storyboardIdentifier="SentMemesVC" id="4mS-U0-eAk" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2V-eR-nF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="SentMemesVC" id="4mS-U0-eAk" customClass="SentMemesVC" customModule="MemeMe" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Ys-qY-cW8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,9 +55,14 @@
                             <outlet property="delegate" destination="4mS-U0-eAk" id="M6a-Ey-Clv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="EqS-yD-KBG"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="EqS-yD-KBG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2cq-o9-9nS">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="custom" id="r4A-ga-vqb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g2V-eR-nF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-954" y="-993"/>
         </scene>
@@ -214,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-675" y="-360"/>
+            <point key="canvasLocation" x="-534" y="-993"/>
         </scene>
     </scenes>
     <resources>

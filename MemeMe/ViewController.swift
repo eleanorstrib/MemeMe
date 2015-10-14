@@ -25,11 +25,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.grayColor()
+        
+        //hide the navigation controller bars
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //TODO: fix, not working
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
         // assign delegates
         topText.delegate = self;
@@ -70,7 +74,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         applyTextStyle(topText)        
         applyTextStyle(bottomText)
-
     }
     
     /////////KEYBOARD MOVEMENT/////////
@@ -214,7 +217,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             image: photoPreview.image!,
             memedImage: createMemeImage()
         )
+        // TODO: remove print statements
+        println(meme)
         savedMemes.append(meme)
+        println(savedMemes)
     }
     
 
