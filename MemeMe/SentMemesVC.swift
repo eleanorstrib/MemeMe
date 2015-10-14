@@ -9,13 +9,27 @@
 import Foundation
 import UIKit
 
-class SentMemesVC: UIViewController {
+class SentMemesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let sentMemes = savedMemes
     
     func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         println(self.sentMemes.count)
         return self.sentMemes.count
     }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //create the reusable cell and define data source
+        let cell = tableView.dequeueReusableCellWithIdentifier("SentMemeCell") as! UITableViewCell
+        let meme = self.sentMemes[indexPath.row]
+        
+        //set the text and image for the table
+        cell.textLabel?.text = meme.topText + meme.bottomText
+        cell.imageView?.image = meme.memedImage
+        
+        return cell
+    }
+    
+    
     
 }
 
