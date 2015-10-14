@@ -206,15 +206,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
-    // creating the struct to store common meme properties
-    // these will be appended to the savedMemesArray
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var image: UIImage
-        var memedImage: UIImage
-    }
-    
     // save the meme an instanciacion of the Meme object when the user shares it
     // append the struct to savedMemes array and save to device
     func saveMeme() {
