@@ -58,10 +58,14 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="EqS-yD-KBG">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2cq-o9-9nS">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="custom" id="r4A-ga-vqb"/>
+                                <action selector="makeNewMeme:" destination="4mS-U0-eAk" id="jpX-Pn-B50"/>
+                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMeme" id="r4A-ga-vqb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newMeme" destination="2cq-o9-9nS" id="z8v-6H-B4d"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-954" y="-993"/>

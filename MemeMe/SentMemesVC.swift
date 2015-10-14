@@ -11,11 +11,7 @@ import UIKit
 
 class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    func viewdidLoad() {
-        super.viewDidLoad()
-        //TODO: fix, not working
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+    @IBOutlet weak var newMeme: UIBarButtonItem!
     
     let sentMemes = savedMemes
     
@@ -34,6 +30,21 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
         cell.imageView?.image = meme.memedImage
         
         return cell
+    }
+    
+    override func viewDidAppear(animated:Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
+    
+    
+    @IBAction func makeNewMeme(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("makeMeme", sender: self)
     }
     
     
