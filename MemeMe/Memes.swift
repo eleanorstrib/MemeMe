@@ -18,3 +18,4 @@ struct Meme {
     var memedImage: UIImage
 }
 
+var savedMemes = [Meme]()

@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-1984" y="-629"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="7OR-wh-hc9">
             <objects>
-                <tableViewController id="4mS-U0-eAk" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SentMemesVC" id="4mS-U0-eAk" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Ys-qY-cW8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,11 +46,11 @@
                             <outlet property="delegate" destination="4mS-U0-eAk" id="M6a-Ey-Clv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EqS-yD-KBG"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="EqS-yD-KBG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2V-eR-nF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1106" y="-964"/>
+            <point key="canvasLocation" x="-954" y="-993"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="e3s-4Z-aWz">
@@ -62,7 +62,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lm4-vL-I0h">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lm4-vL-I0h" id="01r-dx-gt9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

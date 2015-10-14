@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
-class SentMemesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    //codes
+class SentMemesVC: UIViewController {
+    let sentMemes = savedMemes
+    
+    func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println(self.sentMemes.count)
+        return self.sentMemes.count
+    }
+    
 }
 
