@@ -30,11 +30,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         view.backgroundColor = UIColor.grayColor()
         
-//        //hide the navigation controller bars
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        //TODO: fix, not working
-//        self.navigationController?.setToolbarHidden(true, animated: true)
-        
         // assign delegates
         topText.delegate = self;
         bottomText.delegate = self;
@@ -223,11 +218,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         println(savedMemes)
     }
     
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        self.navigationController?.setToolbarHidden(true, animated: animated)
-//    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+//        self.hidesBottomBarWhenPushed = true
+    }
     
 //    override func viewDidDisappear(animated: Bool) {
 //        super.viewDidDisappear(animated)

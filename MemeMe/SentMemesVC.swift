@@ -34,12 +34,10 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     
     override func viewDidAppear(animated:Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        self.navigationController?.setToolbarHidden(false, animated: animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.navigationController?.setToolbarHidden(true, animated: animated)
     }
     
     
