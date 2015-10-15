@@ -31,6 +31,16 @@ class SentMemesCollVC: UICollectionViewController {
 //        
 //        return cell
 //    }
+//    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.hidden = true
+    }
 }
 
 
