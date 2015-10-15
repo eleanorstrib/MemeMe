@@ -16,6 +16,7 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     let sentMemes = savedMemes
     
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //TODO: remove print statement
         println(self.sentMemes.count)
         return self.sentMemes.count
     }
@@ -38,6 +39,7 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     
     override func viewDidDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.hidden = false
     }
     
     
