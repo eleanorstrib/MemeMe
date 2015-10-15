@@ -50,6 +50,12 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
         self.performSegueWithIdentifier("makeMeme", sender: self)
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
+        let meme = sentMemes[indexPath.item]
+        let imageView = UIImageView(image: meme.memedImage)
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
     
     
 }

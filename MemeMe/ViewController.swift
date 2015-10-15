@@ -214,8 +214,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         savedMemes.append(meme)
         println(savedMemes)
     }
-    
-    
 
 
 }

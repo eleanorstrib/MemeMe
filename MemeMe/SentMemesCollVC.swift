@@ -22,18 +22,15 @@ class SentMemesCollVC: UICollectionViewController {
         return self.sentMemes.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollCell", forIndexPath: indexPath) as! UICollectionViewCell
-  
-        cell.backgroundColor = UIColor.blackColor()
-        
-        let meme = self.sentMemes[indexPath.row]
-        
-//        cell.imageView?.image = meme.memedImage
+    override func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollCell", forIndexPath: indexPath) as! MemeCollCell
+        let meme = savedMemes[indexPath.item]
+        let imageView = UIImageView(image: meme.memedImage)
+//        cell.memeImageView?.image = UIImage(named: meme.memedImage)
         
         return cell
     }
+
     
     // show navbar and toolbar with this view, hide when user creates meme
     override func viewDidAppear(animated: Bool) {
