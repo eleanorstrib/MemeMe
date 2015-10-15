@@ -33,9 +33,11 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
         return cell
     }
     
+    // show navbar and toolbar with this view, hide when user creates meme
     override func viewDidAppear(animated:Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.hidden = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func viewDidDisappear(animated: Bool) {

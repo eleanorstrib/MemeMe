@@ -162,12 +162,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     /////////CANCEL BUTTON/////////
     
-    //revert to default text and remove image if user presses cancel
+    //revert to default text and remove image if user presses cancel (changed from v1 where it reset text and image
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-        photoPreview.image = nil
-        shareButton.enabled = false
+        self.performSegueWithIdentifier("backToDetail", sender: self)
     }
     
     /////////SHARE & SAVE/////////
@@ -218,17 +215,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         println(savedMemes)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: animated)
-//        self.hidesBottomBarWhenPushed = true
-    }
     
-//    override func viewDidDisappear(animated: Bool) {
-//        super.viewDidDisappear(animated)
-//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-//        self.navigationController?.setToolbarHidden(false, animated: animated)
-//    }
+
 
 }
 
