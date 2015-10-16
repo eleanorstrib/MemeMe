@@ -13,7 +13,8 @@ class SentMemesCollVC: UICollectionViewController {
     
     @IBOutlet weak var newMemeButton: UIBarButtonItem!
 
-    var sentMemes = savedMemes
+
+    let sentMemes = savedMemes
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TODO remove print statements
@@ -24,12 +25,15 @@ class SentMemesCollVC: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollCell",  forIndexPath: indexPath) as! MemeCollCell
-        let meme = sentMemes[indexPath.row]
-        let imageView = UIImageView(image: meme.memedImage)
-        cell.backgroundColor = UIColor.blackColor()
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollCell", forIndexPath: indexPath) as! MemeCollCell
+        let meme = self.sentMemes[indexPath.row]
+        
+        cell.memeImageView?.image = meme.memedImage
+
+        
         return cell
     }
+    
     
     // show navbar and toolbar with this view, hide when user creates meme
     override func viewDidAppear(animated: Bool) {

@@ -105,7 +105,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollCell" id="FIn-Tn-jNQ" customClass="MemeCollCell" customModule="MemeMe">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -119,7 +119,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="memeImageView" destination="YDV-wE-wFf" id="6nj-iu-d14"/>
+                                    <outlet property="memeImageView" destination="YDV-wE-wFf" id="hvB-Iw-qTB"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -258,7 +258,7 @@
         <!--Meme Detail View-->
         <scene sceneID="fDc-k0-9uK">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailView" id="eoc-UJ-ecH" customClass="MemeDetailView" customModule="MemeMe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailView" modalTransitionStyle="flipHorizontal" id="eoc-UJ-ecH" customClass="MemeDetailView" customModule="MemeMe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ewJ-8Z-tT8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +289,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="eTz-fy-RwF"/>
         <segue reference="aQf-85-9tI"/>
-        <segue reference="r4A-ga-vqb"/>
     </inferredMetricsTieBreakers>
 </document>
