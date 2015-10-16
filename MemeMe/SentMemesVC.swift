@@ -47,7 +47,7 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     
     
     @IBAction func makeNewMeme(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("makeMeme", sender: self)
+        self.performSegueWithIdentifier("makeMemeTable", sender: self)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

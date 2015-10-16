@@ -59,7 +59,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2cq-o9-9nS">
                             <connections>
                                 <action selector="makeNewMeme:" destination="4mS-U0-eAk" id="jpX-Pn-B50"/>
-                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMeme" id="r4A-ga-vqb"/>
+                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMemeTable" id="r4A-ga-vqb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ECJ-7G-Lsy" kind="relationship" relationship="rootViewController" id="4ld-Lj-spQ"/>
+                        <segue destination="MUN-KS-FSo" kind="relationship" relationship="rootViewController" id="yUA-3k-zO6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v07-aA-dU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,59 +90,58 @@
             <point key="canvasLocation" x="-1467" y="-365"/>
         </scene>
         <!--Sent Memes-->
-        <scene sceneID="01P-gY-apE">
+        <scene sceneID="i4X-du-zVd">
             <objects>
-                <collectionViewController storyboardIdentifier="sentMemesColl" title="Sent Memes" id="ECJ-7G-Lsy" customClass="SentMemesCollVC" customModule="MemeMe" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="s5p-Bu-oK8">
+                <collectionViewController id="MUN-KS-FSo" customClass="SentMemesCollVC" customModule="MemeMe" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="SZ8-nc-OHi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MSh-1c-s83">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ufc-iF-05c">
+                            <size key="itemSize" width="112" height="97"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollCell" id="FIn-Tn-jNQ" customClass="MemeCollCell" customModule="MemeMe">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollCell" id="rf2-RE-v9Y" customClass="MemeCollCell" customModule="MemeMe">
+                                <rect key="frame" x="0.0" y="64" width="112" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YDV-wE-wFf">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KW4-MT-4EI">
+                                            <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="memeImageView" destination="YDV-wE-wFf" id="hvB-Iw-qTB"/>
+                                    <outlet property="memeImageView" destination="KW4-MT-4EI" id="VSn-5j-BnQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="ECJ-7G-Lsy" id="La3-4f-Q7z"/>
-                            <outlet property="delegate" destination="ECJ-7G-Lsy" id="Rir-Q7-gt0"/>
+                            <outlet property="dataSource" destination="MUN-KS-FSo" id="p6o-JC-BbO"/>
+                            <outlet property="delegate" destination="MUN-KS-FSo" id="Rvb-XI-N4c"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="Zh5-PZ-sQ0">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DAQ-Sl-Wmo">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="ECi-Sn-enZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d0u-rE-c9T">
                             <connections>
-                                <action selector="makeNewMeme:" destination="ECJ-7G-Lsy" id="PKB-or-Jwq"/>
-                                <segue destination="vXZ-lx-hvc" kind="custom" id="eTz-fy-RwF"/>
+                                <action selector="makeNewMeme:" destination="MUN-KS-FSo" id="iJF-Vr-BIj"/>
+                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMemeCollection" id="5Dv-UY-tuF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="newMemeButton" destination="DAQ-Sl-Wmo" id="dU5-Y4-lnB"/>
+                        <outlet property="newMemeButton" destination="d0u-rE-c9T" id="tX1-Xl-wXu"/>
                     </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8uW-NG-gge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sk2-7v-paw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-954" y="-365"/>
+            <point key="canvasLocation" x="-1081" y="-360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zk6-nG-WFo">
@@ -289,7 +288,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eTz-fy-RwF"/>
         <segue reference="aQf-85-9tI"/>
+        <segue reference="5Dv-UY-tuF"/>
     </inferredMetricsTieBreakers>
 </document>

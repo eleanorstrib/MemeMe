@@ -18,7 +18,7 @@ class SentMemesCollVC: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TODO remove print statements
-        println(self.sentMemes)
+        println("hello!")
         println(self.sentMemes.count)
         return self.sentMemes.count
     }
@@ -29,8 +29,7 @@ class SentMemesCollVC: UICollectionViewController {
         let meme = self.sentMemes[indexPath.row]
         
         cell.memeImageView?.image = meme.memedImage
-
-        
+        println("returning cell collview")
         return cell
     }
     
@@ -47,7 +46,7 @@ class SentMemesCollVC: UICollectionViewController {
     }
     
     @IBAction func makeNewMeme(sender: AnyObject) {
-        self.performSegueWithIdentifier("makeMeme", sender: self)
+        self.performSegueWithIdentifier("makeMemeCollection", sender: self)
     }
     
 }
