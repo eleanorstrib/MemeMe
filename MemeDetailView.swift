@@ -13,7 +13,7 @@ class MemeDetailView: UIViewController {
     
     @IBOutlet weak var memeDetail: UIImageView!
     
-    var sentMeme = savedMemes
+    var sentMemes: Meme!
     
     override func viewWillAppear(animated: Bool) {
         // TODO add code to show image

@@ -18,6 +18,13 @@
 		FD8BBF251B9F7AE5004A6F88 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8BBF241B9F7AE5004A6F88 /* MemeMeTests.swift */; };
 		FD9F40A11BD0426700408C3B /* MemeCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9F40A01BD0426600408C3B /* MemeCollCell.swift */; };
 		FD9F40A31BD047B500408C3B /* MemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9F40A21BD047B500408C3B /* MemeDetailView.swift */; };
+		FDD93C6B1BD0848A009FB989 /* Memes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FDF711BCDD80F0082D954 /* Memes.swift */; };
+		FDD93C6C1BD08495009FB989 /* MemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9F40A21BD047B500408C3B /* MemeDetailView.swift */; };
+		FDD93C6D1BD084A5009FB989 /* SentMemesCollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5A091C1BCF592F0089059B /* SentMemesCollVC.swift */; };
+		FDD93C6E1BD084A8009FB989 /* MemeCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9F40A01BD0426600408C3B /* MemeCollCell.swift */; };
+		FDD93C6F1BD084AD009FB989 /* SentMemesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FDF6F1BCDD7190082D954 /* SentMemesVC.swift */; };
+		FDD93C701BD084BA009FB989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8BBF101B9F7AE5004A6F88 /* ViewController.swift */; };
+		FDD93C711BD084C1009FB989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8BBF0E1B9F7AE5004A6F88 /* AppDelegate.swift */; };
 		FDF40E841BB0649000B04453 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDF40E831BB0649000B04453 /* Impact.ttf */; };
 /* End PBXBuildFile section */
 
@@ -245,7 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD93C711BD084C1009FB989 /* AppDelegate.swift in Sources */,
+				FDD93C6E1BD084A8009FB989 /* MemeCollCell.swift in Sources */,
+				FDD93C6D1BD084A5009FB989 /* SentMemesCollVC.swift in Sources */,
+				FDD93C6F1BD084AD009FB989 /* SentMemesVC.swift in Sources */,
+				FDD93C6C1BD08495009FB989 /* MemeDetailView.swift in Sources */,
+				FDD93C701BD084BA009FB989 /* ViewController.swift in Sources */,
 				FD8BBF251B9F7AE5004A6F88 /* MemeMeTests.swift in Sources */,
+				FDD93C6B1BD0848A009FB989 /* Memes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

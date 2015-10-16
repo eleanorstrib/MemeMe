@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 // creating the struct to store common meme properties
 // these will be appended to the savedMemesArray
 struct Meme {

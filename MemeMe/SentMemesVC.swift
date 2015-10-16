@@ -27,7 +27,7 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
         let meme = self.sentMemes[indexPath.row]
         
         //set the text and image for the table
-        cell.textLabel?.text = meme.topText + meme.bottomText
+        cell.textLabel?.text = meme.topText + " " + meme.bottomText
         cell.imageView?.image = meme.memedImage
         
         return cell
@@ -51,11 +51,12 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
-        let meme = sentMemes[indexPath.item]
-        let imageView = UIImageView(image: meme.memedImage)
-        self.navigationController?.pushViewController(detailController, animated: true)
+        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
+        
+        detailVC.sentMemes = self.sentMemes[indexPath.row]
+        self.navigationController!.pushViewController(detailVC, animated: true)
     }
+    
     
     
 }
