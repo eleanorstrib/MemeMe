@@ -16,7 +16,7 @@ class MemeDetailView: UIViewController {
     var sentMemes: Meme!
     
     override func viewWillAppear(animated: Bool) {
-        // TODO add code to show image
+        self.memeDetail.image = sentMemes.memedImage
     }
     
     override func viewDidAppear(animated: Bool) {
