@@ -14,7 +14,9 @@ class SentMemesCollVC: UICollectionViewController {
     @IBOutlet weak var newMemeButton: UIBarButtonItem!
 
 
-    let sentMemes = savedMemes
+    var sentMemes: [Meme] {
+        return savedMemes
+    }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TODO remove print statements

@@ -13,7 +13,9 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
     
     @IBOutlet weak var newMeme: UIBarButtonItem!
     
-    let sentMemes = savedMemes
+    var sentMemes: [Meme] {
+        return savedMemes
+    }
     
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: remove print statement
@@ -32,9 +34,13 @@ class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDele
         
         return cell
     }
-    
+
     // show navbar and toolbar with this view, hide when user creates meme
-    override func viewDidAppear(animated:Bool) {
+    override func viewWillAppear(animated:Bool) {
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.hidden = false
         self.navigationItem.setHidesBackButton(true, animated: true)

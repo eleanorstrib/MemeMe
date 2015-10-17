@@ -14,6 +14,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let imagePicker = UIImagePickerController()
     // sets up Swift array to save meme objects to
+    var sentMemes: [Meme] {
+        return savedMemes
+    }
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -211,6 +214,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         )
         // TODO: remove print statements
         println(meme)
+        
         savedMemes.append(meme)
         println(savedMemes)
     }
