@@ -227,7 +227,6 @@
                                             <inset key="imageInsets" minX="0.0" minY="5" maxX="10" maxY="-8"/>
                                             <connections>
                                                 <action selector="cancelByUser:" destination="vXZ-lx-hvc" id="VoG-s6-8Qy"/>
-                                                <segue destination="4mS-U0-eAk" kind="modal" identifier="backToDetail" id="aQf-85-9tI"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -289,7 +288,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aQf-85-9tI"/>
         <segue reference="r4A-ga-vqb"/>
     </inferredMetricsTieBreakers>
 </document>
