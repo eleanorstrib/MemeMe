@@ -59,7 +59,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2cq-o9-9nS">
                             <connections>
                                 <action selector="makeNewMeme:" destination="4mS-U0-eAk" id="jpX-Pn-B50"/>
-                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMemeTable" id="r4A-ga-vqb"/>
+                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="makeMemeTable" id="r4A-ga-vqb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,7 +110,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KW4-MT-4EI">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KW4-MT-4EI">
                                             <rect key="frame" x="0.0" y="0.0" width="112" height="97"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -131,11 +131,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d0u-rE-c9T">
                             <connections>
                                 <action selector="makeNewMeme:" destination="MUN-KS-FSo" id="iJF-Vr-BIj"/>
-                                <segue destination="vXZ-lx-hvc" kind="custom" identifier="makeMemeCollection" id="5Dv-UY-tuF"/>
+                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="makeMemeCollection" id="5Dv-UY-tuF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="flowLayout" destination="Ufc-iF-05c" id="gmi-Jo-AuH"/>
                         <outlet property="newMemeButton" destination="d0u-rE-c9T" id="tX1-Xl-wXu"/>
                     </connections>
                 </collectionViewController>
@@ -226,7 +227,7 @@
                                             <inset key="imageInsets" minX="0.0" minY="5" maxX="10" maxY="-8"/>
                                             <connections>
                                                 <action selector="cancelByUser:" destination="vXZ-lx-hvc" id="VoG-s6-8Qy"/>
-                                                <segue destination="4mS-U0-eAk" kind="push" identifier="backToDetail" id="aQf-85-9tI"/>
+                                                <segue destination="4mS-U0-eAk" kind="modal" identifier="backToDetail" id="aQf-85-9tI"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -289,6 +290,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="aQf-85-9tI"/>
-        <segue reference="5Dv-UY-tuF"/>
+        <segue reference="r4A-ga-vqb"/>
     </inferredMetricsTieBreakers>
 </document>

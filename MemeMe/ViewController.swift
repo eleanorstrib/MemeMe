@@ -167,7 +167,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //revert to default text and remove image if user presses cancel (changed from v1 where it reset text and image
     @IBAction func cancelByUser(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("backToDetail", sender: self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     /////////SHARE & SAVE/////////
@@ -182,7 +182,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.saveMeme()
         }
         presentViewController(activityController, animated: true, completion: nil)
-        
     }
     
     // create a new image with the user input

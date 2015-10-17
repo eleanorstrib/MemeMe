@@ -11,11 +11,24 @@ import UIKit
 
 class SentMemesCollVC: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var newMemeButton: UIBarButtonItem!
 
 
     var sentMemes: [Meme] {
         return savedMemes
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        // set spacing, etc for display of memes
+        let space: CGFloat = 1.0
+        let memeWidth = (self.view.frame.size.width - (2 * space) / 5.0)
+        let memeHeight = (self.view.frame.size.height - (2 * space) / 5.0)
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSizeMake(memeWidth, memeHeight)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
