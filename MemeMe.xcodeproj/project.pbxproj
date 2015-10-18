@@ -97,15 +97,15 @@
 			isa = PBXGroup;
 			children = (
 				FD8BBF0E1B9F7AE5004A6F88 /* AppDelegate.swift */,
-				FD8BBF101B9F7AE5004A6F88 /* EditMemeVC.swift */,
 				FD8BBF121B9F7AE5004A6F88 /* Main.storyboard */,
 				FD8BBF151B9F7AE5004A6F88 /* Images.xcassets */,
+				FD4FDF711BCDD80F0082D954 /* Memes.swift */,
 				FD8BBF171B9F7AE5004A6F88 /* LaunchScreen.xib */,
 				FD8BBF0C1B9F7AE5004A6F88 /* Supporting Files */,
 				FD4FDF6F1BCDD7190082D954 /* SentMemesTableVC.swift */,
-				FD4FDF711BCDD80F0082D954 /* Memes.swift */,
-				FD9F40A01BD0426600408C3B /* MemeCollCell.swift */,
 				FD5A091C1BCF592F0089059B /* SentMemesCollVC.swift */,
+				FD8BBF101B9F7AE5004A6F88 /* EditMemeVC.swift */,
+				FD9F40A01BD0426600408C3B /* MemeCollCell.swift */,
 				FD9F40A21BD047B500408C3B /* MemeDetailView.swift */,
 			);
 			path = MemeMe;
