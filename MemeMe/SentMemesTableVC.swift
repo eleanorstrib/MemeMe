@@ -17,9 +17,9 @@ class SentMemesTableVC: UITableViewController, UITableViewDataSource, UITableVie
         return savedMemes
     }
     
+    var deleteMeme: NSIndexPath? = nil
+    
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: remove print statement
-        println(self.sentMemes.count)
         return self.sentMemes.count
     }
     
@@ -34,6 +34,21 @@ class SentMemesTableVC: UITableViewController, UITableViewDataSource, UITableVie
         
         return cell
     }
+    
+//    func tableView(tableView: UITableView, commitEdit
+//        if editingStyle == .Delete {
+//        deleteMeme = indexPath
+//        let deleteThisMeme = sentMemes[indexPath.row] confirm )
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+            let meme = self.sentMemes[indexPath.row]
+            if editingStyle == .Delete {
+                savedMemes.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+    }
+    
+    
 
     //reload data in table so that memes created via collection VC show up
     override func viewWillAppear(animated:Bool) {
