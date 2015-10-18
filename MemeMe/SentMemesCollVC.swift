@@ -70,6 +70,14 @@ class SentMemesCollVC: UICollectionViewController {
         self.performSegueWithIdentifier("makeMemeCollection", sender: self)
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
+        
+        detailVC.sentMemes = self.sentMemes[indexPath.row]
+        self.navigationController!.pushViewController(detailVC, animated: true)
+    }
+    
 }
 
 
