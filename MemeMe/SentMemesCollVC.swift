@@ -21,14 +21,16 @@ class SentMemesCollVC: UICollectionViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        self.collectionView!.backgroundColor = UIColor.whiteColor()
         // set spacing, etc for display of memes
-        let space: CGFloat = 1.0
-        let memeWidth = (self.view.frame.size.width - (2 * space) / 5.0)
-        let memeHeight = (self.view.frame.size.height - (2 * space) / 5.0)
+        let space: CGFloat = 9.0
+        let memeWidth = (self.view.frame.size.width / 5.0)
+        let memeHeight = (self.view.frame.size.height / 5.0)
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSizeMake(memeWidth, memeHeight)
+        flowLayout.sectionInset = UIEdgeInsetsMake(space, space, space, space)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
