@@ -211,11 +211,7 @@ class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             image: photoPreview.image!,
             memedImage: createMemeImage()
         )
-        // TODO: remove print statements
-        println(meme)
-        
         savedMemes.append(meme)
-        println(savedMemes)
     }
 
 

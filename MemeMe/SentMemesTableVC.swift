@@ -35,11 +35,7 @@ class SentMemesTableVC: UITableViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-//    func tableView(tableView: UITableView, commitEdit
-//        if editingStyle == .Delete {
-//        deleteMeme = indexPath
-//        let deleteThisMeme = sentMemes[indexPath.row] confirm )
-    
+    // swipe to delete functionality in the table view
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
             let meme = self.sentMemes[indexPath.row]
             if editingStyle == .Delete {
