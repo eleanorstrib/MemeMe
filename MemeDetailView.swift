@@ -16,13 +16,15 @@ class MemeDetailView: UIViewController {
     var sentMemes: Meme!
     
     override func viewWillAppear(animated: Bool) {
-        self.memeDetail.image = sentMemes.memedImage
+        super.viewWillAppear(animated)
+        memeDetail.image = sentMemes.memedImage
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.tabBarController?.tabBar.hidden = false
-        self.navigationItem.setHidesBackButton(false, animated: false)
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tabBarController?.tabBar.hidden = false
+        navigationItem.setHidesBackButton(false, animated: false)
     }
     
 }
