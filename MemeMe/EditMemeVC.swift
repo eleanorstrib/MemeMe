@@ -14,6 +14,7 @@ class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     let imagePicker = UIImagePickerController()
     // sets up Swift array to save meme objects to
+    
     var sentMemes: [Meme] {
         return savedMemes
     }
@@ -78,7 +79,7 @@ class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // return key dismisses keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
-        return false
+        return true
     }
     
     // replace only the default text with user entered text
@@ -114,7 +115,7 @@ class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // slide only when bottomText is the active field
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -136,9 +137,9 @@ class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // camera button code
     @IBAction func cameraActivate(sender: UIBarButtonItem) {
         // check if a camera is available on the device, disable button if not
-            imagePicker.sourceType = .Camera
-            presentViewController(imagePicker, animated: true, completion: nil)
-            shareButton.enabled = true
+        imagePicker.sourceType = .Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+        shareButton.enabled = true
     }
     
     // select an image from album
