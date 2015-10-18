@@ -26,14 +26,14 @@
         <!--Sent Memes-->
         <scene sceneID="7OR-wh-hc9">
             <objects>
-                <tableViewController storyboardIdentifier="SentMemesVC" id="4mS-U0-eAk" customClass="SentMemesVC" customModule="MemeMe" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SentMemesTableVC" id="4mS-U0-eAk" customClass="SentMemesTableVC" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Ys-qY-cW8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeCell" textLabel="cZ9-uu-oGW" style="IBUITableViewCellStyleDefault" id="24F-ji-f2I">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="24F-ji-f2I" id="dPJ-LL-YlG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -92,7 +92,7 @@
         <!--Sent Memes-->
         <scene sceneID="i4X-du-zVd">
             <objects>
-                <collectionViewController id="MUN-KS-FSo" customClass="SentMemesCollVC" customModule="MemeMe" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SentMemesCollVC" id="MUN-KS-FSo" customClass="SentMemesCollVC" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="SZ8-nc-OHi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="-1467" y="-1039"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit MemeVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditMemeVC" id="vXZ-lx-hvc" customClass="EditMemeVC" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -288,6 +288,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="r4A-ga-vqb"/>
+        <segue reference="5Dv-UY-tuF"/>
     </inferredMetricsTieBreakers>
 </document>

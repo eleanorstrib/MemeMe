@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EditMemeVC.swift
 //  MemeMe
 //
 //  Created by Eleanor Stribling on 9/8/15.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
     // sets up Swift array to save meme objects to

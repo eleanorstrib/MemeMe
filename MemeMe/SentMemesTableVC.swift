@@ -1,5 +1,5 @@
 //
-//  SentMemesVC.swift
+//  SentMemesTableVC.swift
 //  MemeMe
 //
 //  Created by Eleanor Stribling on 10/13/15.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SentMemesVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class SentMemesTableVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var newMeme: UIBarButtonItem!
     
