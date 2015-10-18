@@ -21,11 +21,11 @@ class SentMemesCollVC: UICollectionViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        collectionView!.backgroundColor = UIColor.whiteColor()
         // set spacing, etc for display of memes
         let space: CGFloat = 9.0
-        let memeWidth = (self.view.frame.size.width / 5.0)
-        let memeHeight = (self.view.frame.size.height / 5.0)
+        let memeWidth = (view.frame.size.width / 5.0)
+        let memeHeight = (view.frame.size.height / 5.0)
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
@@ -34,13 +34,13 @@ class SentMemesCollVC: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.sentMemes.count
+        return sentMemes.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollCell", forIndexPath: indexPath) as! MemeCollCell
-        let meme = self.sentMemes[indexPath.row]
+        let meme = sentMemes[indexPath.row]
         
         cell.memeImageView?.image = meme.memedImage
         return cell
@@ -48,30 +48,34 @@ class SentMemesCollVC: UICollectionViewController {
     
     //reload data in table so that memes created via table VC show up
     override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
         collectionView!.reloadData()
     }
     
     // show navbar and toolbar with this view, hide when user creates meme
     override func viewDidAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.tabBarController?.tabBar.hidden = false
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tabBarController?.tabBar.hidden = false
     }
     
     override func viewDidDisappear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.tabBar.hidden = true
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        tabBarController?.tabBar.hidden = true
     }
     
     @IBAction func makeNewMeme(sender: AnyObject) {
-        self.performSegueWithIdentifier("makeMemeCollection", sender: self)
+        performSegueWithIdentifier("makeMemeCollection", sender: self)
     }
     
+    // meme detail view
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
-        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
+        let detailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailView") as! MemeDetailView
         
-        detailVC.sentMemes = self.sentMemes[indexPath.row]
-        self.navigationController!.pushViewController(detailVC, animated: true)
+        detailVC.sentMemes = sentMemes[indexPath.row]
+        navigationController!.pushViewController(detailVC, animated: true)
     }
     
 }
